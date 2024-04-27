@@ -1,0 +1,42 @@
+create table card_record
+(
+    id          varchar(36)                         not null
+        primary key,
+    createdAt   timestamp default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '创建时间',
+    createdBy   varchar(255)                        null comment '创建者',
+    updatedAt   timestamp                           null comment '修改时间',
+    updatedBy   varchar(255)                        null comment '修改者',
+    deletedAt   datetime(6)                         null,
+    deletedBy   varchar(255)                        null comment '删除者',
+    startTime   timestamp                           null comment '开始时间',
+    endTime     timestamp                           null comment '结束时间',
+    buyTime     timestamp                           null comment '购买时间',
+    residueTime int                                 null comment '剩余次数',
+    cardId      varchar(36)                         null,
+    studentId   varchar(36)                         null,
+    courseId    varchar(36)                         null,
+    orgId       varchar(36)                         null,
+    constraint FK_4763adf564cf22f20c6088653bc
+        foreign key (studentId) references student (id),
+    constraint FK_5f3e9aa536fe1975a19cb5557a3
+        foreign key (cardId) references card (id),
+    constraint FK_f7d436017c454dff6f00c2a1470
+        foreign key (courseId) references course (id),
+    constraint FK_f937d57d3dbd4ff100136cf97eb
+        foreign key (orgId) references organization (id)
+)
+    charset = utf8mb3;
+
+INSERT INTO water.card_record (id, createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy, startTime, endTime, buyTime, residueTime, cardId, studentId, courseId, orgId) VALUES ('0443e9fc-a59c-48ad-bd17-0b29e7a10015', '2023-06-17 15:29:11', null, '2023-06-17 15:29:12', 'babb398f-017c-4f9a-9652-e160f866a1b7', null, null, '2023-06-13 16:04:47', '2023-09-21 16:04:47', '2023-06-13 16:04:47', 1, '5e77eff4-21c3-48a7-b61a-dee662490e8c', 'babb398f-017c-4f9a-9652-e160f866a1b7', 'fa73f3f5-da6a-4ef4-9aa5-b9e8b81d96c4', '2b967e80-f6c0-4cfe-a9c1-1db90a4cb4c8');
+INSERT INTO water.card_record (id, createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy, startTime, endTime, buyTime, residueTime, cardId, studentId, courseId, orgId) VALUES ('04937291-0405-4f72-a2ee-f3db3efa087c', '2023-06-17 15:53:42', null, '2023-06-17 15:53:42', null, null, null, '2023-06-02 12:23:16', '2023-07-02 12:23:16', '2023-06-02 12:23:16', 0, 'e2ae3b9d-6e44-466d-bf6b-4d27e2a19a35', 'babb398f-017c-4f9a-9652-e160f866a1b7', '35e642aa-e4f7-4016-8785-b7e8175a198c', '6710fa26-2602-442a-b8af-5930430f46d5');
+INSERT INTO water.card_record (id, createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy, startTime, endTime, buyTime, residueTime, cardId, studentId, courseId, orgId) VALUES ('130b9c3c-1661-41b0-a034-2250dc170d0f', '2023-06-14 16:48:20', null, '2023-06-14 16:48:20', null, null, null, '2023-06-02 11:59:24', '2023-07-02 11:59:24', '2023-06-02 11:59:24', 8, 'e2ae3b9d-6e44-466d-bf6b-4d27e2a19a35', 'babb398f-017c-4f9a-9652-e160f866a1b7', '35e642aa-e4f7-4016-8785-b7e8175a198c', '6710fa26-2602-442a-b8af-5930430f46d5');
+INSERT INTO water.card_record (id, createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy, startTime, endTime, buyTime, residueTime, cardId, studentId, courseId, orgId) VALUES ('3d46036f-e297-4240-a34e-95f2ad880898', '2023-06-02 12:23:16', null, '2023-06-02 12:23:16', null, null, null, '2023-06-02 12:23:16', '2023-06-03 12:23:16', '2023-06-02 12:23:16', 10, '2eef5697-be81-4ecd-a9d8-8322524578ca', 'babb398f-017c-4f9a-9652-e160f866a1b7', 'befc60be-8292-4a82-ac31-d3e54c1b8c68', '6710fa26-2602-442a-b8af-5930430f46d5');
+INSERT INTO water.card_record (id, createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy, startTime, endTime, buyTime, residueTime, cardId, studentId, courseId, orgId) VALUES ('49d9aa6c-a7e9-44bf-9aa0-7fae59388c84', '2023-06-14 16:46:51', null, '2023-06-14 16:46:51', null, null, null, '2023-06-02 12:14:55', '2023-07-02 12:14:55', '2023-06-02 12:14:55', 1, 'e2ae3b9d-6e44-466d-bf6b-4d27e2a19a35', 'babb398f-017c-4f9a-9652-e160f866a1b7', '35e642aa-e4f7-4016-8785-b7e8175a198c', '6710fa26-2602-442a-b8af-5930430f46d5');
+INSERT INTO water.card_record (id, createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy, startTime, endTime, buyTime, residueTime, cardId, studentId, courseId, orgId) VALUES ('9786c2e6-a834-4abb-960c-6816c917eaa8', '2023-06-13 16:08:15', null, '2023-06-02 12:23:16', null, null, null, '2023-06-02 12:23:16', '2023-06-16 12:23:16', '2023-06-02 12:23:16', 1, 'ed778458-b830-4235-8586-513b58766bd1', 'babb398f-017c-4f9a-9652-e160f866a1b7', 'befc60be-8292-4a82-ac31-d3e54c1b8c68', '6710fa26-2602-442a-b8af-5930430f46d5');
+INSERT INTO water.card_record (id, createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy, startTime, endTime, buyTime, residueTime, cardId, studentId, courseId, orgId) VALUES ('a3d61151-752e-48ea-9e31-2b0045154b90', '2023-06-13 16:08:15', null, '2023-06-13 16:04:03', null, null, null, '2023-06-02 12:12:42', '2023-07-02 12:12:42', '2023-06-02 12:12:42', 1, 'e2ae3b9d-6e44-466d-bf6b-4d27e2a19a35', 'babb398f-017c-4f9a-9652-e160f866a1b7', '35e642aa-e4f7-4016-8785-b7e8175a198c', '6710fa26-2602-442a-b8af-5930430f46d5');
+INSERT INTO water.card_record (id, createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy, startTime, endTime, buyTime, residueTime, cardId, studentId, courseId, orgId) VALUES ('a62c2242-dad6-4637-b58a-a7ffbb90f65e', '2023-06-13 16:08:15', null, '2023-06-12 16:57:33', null, null, null, '2023-06-10 16:29:03', '2023-09-18 16:29:03', '2023-06-10 16:29:03', 1, '5e77eff4-21c3-48a7-b61a-dee662490e8c', 'babb398f-017c-4f9a-9652-e160f866a1b7', 'fa73f3f5-da6a-4ef4-9aa5-b9e8b81d96c4', '2b967e80-f6c0-4cfe-a9c1-1db90a4cb4c8');
+INSERT INTO water.card_record (id, createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy, startTime, endTime, buyTime, residueTime, cardId, studentId, courseId, orgId) VALUES ('aa114e73-ac8f-4658-bb01-a7ef04582cc2', '2023-06-13 16:08:15', null, '2023-06-09 18:38:59', null, null, null, '2023-06-09 17:58:26', '2023-09-17 17:58:26', '2023-06-09 17:58:26', 1, '5e77eff4-21c3-48a7-b61a-dee662490e8c', 'babb398f-017c-4f9a-9652-e160f866a1b7', 'fa73f3f5-da6a-4ef4-9aa5-b9e8b81d96c4', '2b967e80-f6c0-4cfe-a9c1-1db90a4cb4c8');
+INSERT INTO water.card_record (id, createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy, startTime, endTime, buyTime, residueTime, cardId, studentId, courseId, orgId) VALUES ('acaefccd-3ed5-4780-93c3-3a6c67e30240', '2023-06-02 11:59:24', null, '2023-06-02 11:59:24', null, null, null, '2023-06-02 11:59:24', '2023-06-03 11:59:24', '2023-06-02 11:59:24', 10, '2eef5697-be81-4ecd-a9d8-8322524578ca', 'babb398f-017c-4f9a-9652-e160f866a1b7', 'befc60be-8292-4a82-ac31-d3e54c1b8c68', '6710fa26-2602-442a-b8af-5930430f46d5');
+INSERT INTO water.card_record (id, createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy, startTime, endTime, buyTime, residueTime, cardId, studentId, courseId, orgId) VALUES ('c057e9bf-864d-43bb-a9d7-aaea780fb8dc', '2023-06-02 12:12:42', null, '2023-06-02 12:12:42', null, null, null, '2023-06-02 12:12:42', '2023-06-03 12:12:42', '2023-06-02 12:12:42', 10, '2eef5697-be81-4ecd-a9d8-8322524578ca', 'babb398f-017c-4f9a-9652-e160f866a1b7', 'befc60be-8292-4a82-ac31-d3e54c1b8c68', '6710fa26-2602-442a-b8af-5930430f46d5');
+INSERT INTO water.card_record (id, createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy, startTime, endTime, buyTime, residueTime, cardId, studentId, courseId, orgId) VALUES ('cc9dee56-e37c-4961-8aad-9b9905a9966c', '2023-06-02 12:12:42', null, '2023-06-02 12:12:42', null, null, null, '2023-06-02 12:12:42', '2023-06-16 12:12:42', '2023-06-02 12:12:42', 0, 'ed778458-b830-4235-8586-513b58766bd1', 'babb398f-017c-4f9a-9652-e160f866a1b7', 'befc60be-8292-4a82-ac31-d3e54c1b8c68', '6710fa26-2602-442a-b8af-5930430f46d5');
+INSERT INTO water.card_record (id, createdAt, createdBy, updatedAt, updatedBy, deletedAt, deletedBy, startTime, endTime, buyTime, residueTime, cardId, studentId, courseId, orgId) VALUES ('f8fb6de9-2b13-40cd-a412-cbd5beeeac1f', '2023-06-10 15:22:37', null, '2023-06-10 15:22:37', null, null, null, '2023-06-09 17:58:51', '2023-09-17 17:58:51', '2023-06-09 17:58:51', 0, '5e77eff4-21c3-48a7-b61a-dee662490e8c', 'babb398f-017c-4f9a-9652-e160f866a1b7', 'fa73f3f5-da6a-4ef4-9aa5-b9e8b81d96c4', '2b967e80-f6c0-4cfe-a9c1-1db90a4cb4c8');

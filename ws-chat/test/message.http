@@ -1,0 +1,7 @@
+POST http://localhost:4000/messages/all
+Content-Type: application/json
+
+{
+  "sessionId": "6710fa26-2602-442a-b8af-5930430f46d5"
+}
+
